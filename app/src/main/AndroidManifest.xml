@@ -17,7 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".RecyclerViewSharedElementActivity" />
-        <activity android:name=".RecycleViewDetailedActivity"></activity>
+        <activity android:name=".RecycleViewDetailedActivity" />
+        <activity android:name=".RestClientActivity"
+            android:screenOrientation="portrait"/>
+
+        <uses-permission android:name="android.permission.INTERNET" />
+
     </application>
 
 </manifest>
