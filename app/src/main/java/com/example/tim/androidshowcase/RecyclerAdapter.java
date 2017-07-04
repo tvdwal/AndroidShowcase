@@ -1,6 +1,7 @@
+package com.example.tim.androidshowcase;
+
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tim.androidshowcase.R;
-import com.example.tim.androidshowcase.RecyclerViewSharedElementActivity;
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
