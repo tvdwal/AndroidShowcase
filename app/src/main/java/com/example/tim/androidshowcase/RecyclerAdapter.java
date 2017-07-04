@@ -1,12 +1,16 @@
 package com.example.tim.androidshowcase;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,11 +40,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.DataOb
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(v.getContext(), "Click!", Toast.LENGTH_SHORT).show();
-            //Context context = itemView.getContext();
-            //Intent showPhotoIntent = new Intent(context, RecyclerViewSharedElementActivity.class);
-            //showPhotoIntent.putExtra(PHOTO_KEY, mDataObject);
-            //context.startActivity(showPhotoIntent);
+            Context context = itemView.getContext();
+            Intent sharedElementTransitionIntent = new Intent(context, RecycleViewDetailedActivity.class);
+            sharedElementTransitionIntent.putExtra("source", mDataObject);
+            Pair<View, String> p1 = Pair.create((View)mImageView, "sharedElementTransitionImage");
+            Pair<View, String> p2 = Pair.create((View)mTextView1, "sharedElementTransitionTitle");
+            Pair<View, String> p3 = Pair.create((View)mTextView2, "sharedElementTransitionDescription");
+            ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, p1, p2, p3);
+            context.startActivity(sharedElementTransitionIntent, optionsCompat.toBundle());
         }
 
         public void bindDataObject(DataObject dataObject) {

@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecyclerViewSharedElementActivity"></activity>
+        <activity android:name=".RecyclerViewSharedElementActivity" />
+        <activity android:name=".RecycleViewDetailedActivity"></activity>
     </application>
 
 </manifest>
