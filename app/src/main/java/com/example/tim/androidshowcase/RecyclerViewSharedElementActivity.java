@@ -9,6 +9,7 @@ public class RecyclerViewSharedElementActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
+    RecyclerAdapter recyclerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

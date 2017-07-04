@@ -1,3 +1,5 @@
+package com.example.tim.androidshowcase;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
