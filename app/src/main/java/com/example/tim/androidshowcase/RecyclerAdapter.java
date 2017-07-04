@@ -1,7 +1,5 @@
 package com.example.tim.androidshowcase;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,28 +8,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 
 /**
  * Created by Tim on 4-7-2017.
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PhotoHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.DataObjectHolder> {
 
-    ArrayList<Photo> myPhotos;
+    ArrayList<DataObject> myDataObjects;
 
-    public static class PhotoHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class DataObjectHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView mImageView;
         TextView mTextView1;
         TextView mTextView2;
-        Photo mPhoto;
+        DataObject mDataObject;
 
-        private static final String PHOTO_KEY = "PHOTO";
-
-        public PhotoHolder(View itemView) {
+        public DataObjectHolder(View itemView) {
             super(itemView);
 
             mImageView = (ImageView) itemView.findViewById(R.id.recycler_view_item_image);
@@ -43,39 +37,39 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PhotoH
         @Override
         public void onClick(View v) {
             Toast.makeText(v.getContext(), "Click!", Toast.LENGTH_SHORT).show();
-            Context context = itemView.getContext();
-            Intent showPhotoIntent = new Intent(context, RecyclerViewSharedElementActivity.class);
-            showPhotoIntent.putExtra(PHOTO_KEY, mPhoto);
-            context.startActivity(showPhotoIntent);
+            //Context context = itemView.getContext();
+            //Intent showPhotoIntent = new Intent(context, RecyclerViewSharedElementActivity.class);
+            //showPhotoIntent.putExtra(PHOTO_KEY, mDataObject);
+            //context.startActivity(showPhotoIntent);
         }
 
-        public void bindPhoto(Photo photo) {
-            mPhoto = photo;
-            Picasso.with(mImageView.getContext()).load(photo.getUrl()).into(mImageView);
-            mTextView1.setText(photo.getHumanDate());
-            mTextView2.setText(photo.getExplanation());
+        public void bindDataObject(DataObject dataObject) {
+            mDataObject = dataObject;
+            mImageView.setImageResource(dataObject.getResId());
+            mTextView1.setText(dataObject.getTitle());
+            mTextView2.setText(dataObject.getDescription());
         }
     }
 
-    public RecyclerAdapter(ArrayList<Photo> photos) {
-        myPhotos = photos;
+    public RecyclerAdapter(ArrayList<DataObject> dataObjects) {
+        myDataObjects = dataObjects;
     }
 
     @Override
-    public PhotoHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DataObjectHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View inflatedView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recyclerview_item_row, parent, false);
-        return new PhotoHolder(inflatedView);
+        return new DataObjectHolder(inflatedView);
     }
 
     @Override
-    public void onBindViewHolder(PhotoHolder holder, int position) {
-        Photo photo = myPhotos.get(position);
-        holder.bindPhoto(photo);
+    public void onBindViewHolder(DataObjectHolder holder, int position) {
+        DataObject dataObject = myDataObjects.get(position);
+        holder.bindDataObject(dataObject);
     }
 
     @Override
     public int getItemCount() {
-        return myPhotos.size();
+        return myDataObjects.size();
     }
 }
