@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">AndroidShowcase</string>
     <string name="API_key">7A9ego6wJIQTIzMu5zRiFEUA3zDrdgUaVAqdbPFe</string>
+
+    <string-array name="rest_request_types">
+        <item>GET</item>
+        <item>POST</item>
+        <item>PUT</item>
+        <item>DELETE</item>
+    </string-array>
 </resources>
