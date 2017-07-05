@@ -21,6 +21,7 @@
 
         <uses-permission android:name="android.permission.INTERNET" />
 
+        <activity android:name=".RestClientActivity"></activity>
     </application>
 
 </manifest>
