@@ -10,14 +10,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import retrofit2.Retrofit;
-
 public class RestClientActivity extends AppCompatActivity {
 
     TextView textViewRestResult;
     EditText editTextRestUrl;
     Spinner spinnerRequestTypes;
     Button buttonRequest;
+
+    PokemonController restPokemonController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +47,14 @@ public class RestClientActivity extends AppCompatActivity {
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ExecuteRestCall();
             }
         });
     }
 
     private void ExecuteRestCall() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(editTextRestUrl.getText().toString())
-                .build();
+        PokemonController pokemonController = new PokemonController();
+        pokemonController.start();
     }
 
 }
