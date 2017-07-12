@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.tim.androidshowcase.Recycler.DataObject;
 
 public class RecycleViewDetailedActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase;
+package com.example.tim.androidshowcase.REST;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

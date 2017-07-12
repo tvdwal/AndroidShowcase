@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.tim.androidshowcase.Recycler.DataObject;
+import com.example.tim.androidshowcase.Recycler.RecyclerAdapter;
+
 import java.util.ArrayList;
 
 public class RecyclerViewSharedElementActivity extends AppCompatActivity {

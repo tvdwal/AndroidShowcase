@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase;
+package com.example.tim.androidshowcase.Recycler;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.tim.androidshowcase.R;
+import com.example.tim.androidshowcase.RecycleViewDetailedActivity;
 
 import java.util.ArrayList;
 

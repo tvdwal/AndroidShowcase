@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase;
+package com.example.tim.androidshowcase.REST;
 
 /**
  * Created by Tim on 12-7-2017.
