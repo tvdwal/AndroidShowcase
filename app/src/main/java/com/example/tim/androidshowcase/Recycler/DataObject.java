@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase;
+package com.example.tim.androidshowcase.Recycler;
 
 import android.graphics.drawable.Drawable;
 

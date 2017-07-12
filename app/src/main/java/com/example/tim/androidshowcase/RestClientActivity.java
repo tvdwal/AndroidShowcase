@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.tim.androidshowcase.REST.PokemonController;
+
 public class RestClientActivity extends AppCompatActivity {
 
     TextView textViewRestResult;
