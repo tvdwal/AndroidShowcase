@@ -1,5 +1,9 @@
 package com.example.tim.androidshowcase;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.tim.androidshowcase.REST.Pokemon;
 import com.example.tim.androidshowcase.REST.PokemonController;
 
 public class RestClientActivity extends AppCompatActivity {
@@ -20,6 +25,7 @@ public class RestClientActivity extends AppCompatActivity {
     Button buttonRequest;
 
     PokemonController restPokemonController;
+    MyPokemonReceiver myPokemonReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +55,24 @@ public class RestClientActivity extends AppCompatActivity {
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ExecuteRestCall();
+                ExecuteRestCall(editTextRestUrl.getText().toString());
             }
         });
+
+        myPokemonReceiver = new MyPokemonReceiver();
+        this.registerReceiver(myPokemonReceiver, new IntentFilter(MyPokemonReceiver.ACTION));
     }
 
-    private void ExecuteRestCall() {
+    private void ExecuteRestCall(String pokemonId) {
         PokemonController pokemonController = new PokemonController();
-        pokemonController.start();
+        pokemonController.start(pokemonId, this);
     }
 
+    public class MyPokemonReceiver extends BroadcastReceiver {
+        public static final String ACTION = "com.example.tim.androidshowcase.ACTION_POKEMON";
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            textViewRestResult.setText(intent.getStringExtra("pokemon"));
+        }
+    }
 }

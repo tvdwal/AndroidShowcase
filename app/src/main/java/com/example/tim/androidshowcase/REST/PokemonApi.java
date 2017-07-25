@@ -10,5 +10,5 @@ import retrofit2.http.Path;
 
 public interface PokemonApi {
     @GET("pokemon/{nr}")
-    Call<Pokemon> getPokemon(@Path("nr") String user);
+    Call<Pokemon> getPokemon(@Path("nr") String nr);
 }
