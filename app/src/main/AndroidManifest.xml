@@ -21,6 +21,9 @@
         <activity android:name=".RecyclerViewSharedElementActivity" />
         <activity android:name=".RecycleViewDetailedActivity" />
         <activity android:name=".RestClientActivity"/>
+
+        <receiver android:name=".RestClientActivity$MyPokemonReceiver" >
+        </receiver>
     </application>
 
 </manifest>

@@ -1,7 +1,10 @@
 package com.example.tim.androidshowcase.REST;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
+import com.example.tim.androidshowcase.RestClientActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -21,8 +24,10 @@ public class PokemonController implements Callback<Pokemon> {
 
     static final String REST_TAG = "REST";
     static final String BASE_URL = "http://pokeapi.co/api/v2/";
+    private Context context;
 
-    public void start() {
+    public void start(String pokemonId, Context context) {
+        this.context = context;
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -39,7 +44,7 @@ public class PokemonController implements Callback<Pokemon> {
 
         PokemonApi pokemonApi = retrofit.create(PokemonApi.class);
 
-        Call<Pokemon> call = pokemonApi.getPokemon("1");
+        Call<Pokemon> call = pokemonApi.getPokemon(pokemonId);
         call.enqueue(this);
     }
 
@@ -47,7 +52,10 @@ public class PokemonController implements Callback<Pokemon> {
     public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
         if (response.isSuccessful()) {
             Pokemon pokemon = response.body();
-            Log.d(REST_TAG, pokemon.getName());
+            Intent i = new Intent();
+            i.setAction(RestClientActivity.MyPokemonReceiver.ACTION);
+            i.putExtra("pokemon", pokemon.toString());
+            context.sendBroadcast(i);
         }
         else {
             Log.e(REST_TAG, response.errorBody().toString());
