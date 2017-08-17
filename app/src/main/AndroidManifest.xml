@@ -20,10 +20,11 @@
         </activity>
         <activity android:name=".RecyclerViewSharedElementActivity" />
         <activity android:name=".RecycleViewDetailedActivity" />
-        <activity android:name=".RestClientActivity"/>
+        <activity android:name=".RestClientActivity" />
 
-        <receiver android:name=".RestClientActivity$MyPokemonReceiver" >
-        </receiver>
+        <receiver android:name=".RestClientActivity$MyPokemonReceiver"></receiver>
+
+        <activity android:name=".FragmentsActivity"></activity>
     </application>
 
 </manifest>
