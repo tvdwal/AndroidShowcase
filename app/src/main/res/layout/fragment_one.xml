@@ -4,4 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RadioGroup
+        android:id="@+id/radioGroupPlanets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/radioButtonEarth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earth"/>
+        <RadioButton
+            android:id="@+id/radioButtonMars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mars"/>
+        <RadioButton
+            android:id="@+id/radioButtonVenus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Venus"/>
+        <RadioButton
+            android:id="@+id/radioButtonNeptune"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Neptune"/>
+    </RadioGroup>
+
 </LinearLayout>
