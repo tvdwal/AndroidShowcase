@@ -14,17 +14,16 @@
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Activities.RecyclerViewSharedElementActivity" />
         <activity android:name=".Activities.RecycleViewDetailedActivity" />
         <activity android:name=".Activities.RestClientActivity" />
+        <activity android:name=".Activities.FragmentsActivity" />
 
         <receiver android:name=".Activities.RestClientActivity$MyPokemonReceiver"></receiver>
 
-        <activity android:name=".Activities.FragmentsActivity"></activity>
     </application>
 
 </manifest>

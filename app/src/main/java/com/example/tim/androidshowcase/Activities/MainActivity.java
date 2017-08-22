@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button f = (Button)findViewById(R.id.btnFragments);
-        c.setOnClickListener(new View.OnClickListener() {
+        f.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, FragmentActivity.class);
