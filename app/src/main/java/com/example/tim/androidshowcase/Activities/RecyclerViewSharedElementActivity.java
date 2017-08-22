@@ -1,10 +1,11 @@
-package com.example.tim.androidshowcase;
+package com.example.tim.androidshowcase.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.tim.androidshowcase.R;
 import com.example.tim.androidshowcase.Recycler.DataObject;
 import com.example.tim.androidshowcase.Recycler.RecyclerAdapter;
 

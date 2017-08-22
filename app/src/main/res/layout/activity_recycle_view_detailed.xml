@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.tim.androidshowcase.RecycleViewDetailedActivity">
+    tools:context="com.example.tim.androidshowcase.Activities.RecycleViewDetailedActivity">
 
     <TextView
         android:id="@+id/recycler_detailed_view_title"

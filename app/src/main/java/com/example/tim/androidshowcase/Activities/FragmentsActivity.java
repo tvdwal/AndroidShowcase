@@ -1,7 +1,9 @@
-package com.example.tim.androidshowcase;
+package com.example.tim.androidshowcase.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.tim.androidshowcase.R;
 
 public class FragmentsActivity extends AppCompatActivity {
 
