@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase;
+package com.example.tim.androidshowcase.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tim.androidshowcase.R;
 import com.example.tim.androidshowcase.Recycler.DataObject;
 
 public class RecycleViewDetailedActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase;
+package com.example.tim.androidshowcase.Activities;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.tim.androidshowcase.R;
 import com.example.tim.androidshowcase.REST.Pokemon;
 import com.example.tim.androidshowcase.REST.PokemonController;
 

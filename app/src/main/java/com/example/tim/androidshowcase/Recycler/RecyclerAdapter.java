@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tim.androidshowcase.R;
-import com.example.tim.androidshowcase.RecycleViewDetailedActivity;
+import com.example.tim.androidshowcase.Activities.RecycleViewDetailedActivity;
 
 import java.util.ArrayList;
 
