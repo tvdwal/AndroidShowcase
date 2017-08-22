@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         f.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, FragmentActivity.class);
+                Intent i = new Intent(MainActivity.this, FragmentsActivity.class);
                 startActivity(i);
             }
         });
