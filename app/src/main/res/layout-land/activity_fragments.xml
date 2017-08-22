@@ -3,17 +3,17 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
+    <fragment class="com.example.tim.androidshowcase.Fragments.PlanetNamesFragment"
         android:id="@+id/planetNamesFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
-    <fragment
+    <fragment class="com.example.tim.androidshowcase.Fragments.PlanetImageFragment"
         android:id="@+id/planetImageFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"/>
-    <fragment
+    <fragment class="com.example.tim.androidshowcase.Fragments.PlanetDescriptionFragment"
         android:id="@+id/planetDescriptionFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
