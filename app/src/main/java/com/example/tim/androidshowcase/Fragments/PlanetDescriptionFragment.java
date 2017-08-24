@@ -27,15 +27,13 @@ public class PlanetDescriptionFragment extends Fragment {
         planetDescriptions = getResources().getStringArray(R.array.planetDescriptions);
         textViewDescription = (TextView)  view.findViewById(R.id.textViewPlanetDescription);
 
-        latestDescriptionIndex = 0;
-
-        setDisplayedDescription(latestDescriptionIndex);
+        setDisplayedDescription(0);
 
         return view;
     }
 
     public void setDisplayedDescription(int index) {
         latestDescriptionIndex = index;
-        textViewDescription.setText(planetDescriptions[index]);
+        textViewDescription.setText(planetDescriptions[latestDescriptionIndex]);
     }
 }

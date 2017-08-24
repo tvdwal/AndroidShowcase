@@ -5,5 +5,5 @@ package com.example.tim.androidshowcase.Fragments;
  */
 
 public interface PlanetFragmentCoordinator {
-    void onPlanetSelectionChanged(int index);
+    void onPlanetSelectionChanged(int descriptionId, int imageResourceId);
 }
