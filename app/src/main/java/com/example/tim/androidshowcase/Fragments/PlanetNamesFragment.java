@@ -2,7 +2,6 @@ package com.example.tim.androidshowcase.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,14 +30,16 @@ public class PlanetNamesFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         RadioButton rb = (RadioButton)v;
-        int index = translateIdToIndex(rb.getId());
+        int rbIndex = rb.getId();
+        int descriptionId = translateIdToDescriptionId(rbIndex);
+        int planetresourceId = translateIdToImageResourceId(rbIndex);
         CharSequence text = rb.getText();
 
         PlanetFragmentCoordinator planetFragmentCoordinator = (PlanetFragmentCoordinator)getActivity();
-        planetFragmentCoordinator.onPlanetSelectionChanged(index);
+        planetFragmentCoordinator.onPlanetSelectionChanged(descriptionId, planetresourceId);
     }
 
-    private int translateIdToIndex(int id) {
+    private int translateIdToDescriptionId(int id) {
         switch (id) {
             case R.id.radioButtonEarth:
                 return 0;
@@ -48,6 +49,21 @@ public class PlanetNamesFragment extends Fragment implements View.OnClickListene
                 return 2;
             case R.id.radioButtonNeptune:
                 return 3;
+            default:
+                return -1;
+        }
+    }
+
+    private int translateIdToImageResourceId(int id) {
+        switch (id) {
+            case R.id.radioButtonEarth:
+                return R.drawable.earth;
+            case R.id.radioButtonMars:
+                return R.drawable.mars;
+            case R.id.radioButtonMercury:
+                return R.drawable.mercury;
+            case R.id.radioButtonNeptune:
+                return R.drawable.neptune;
             default:
                 return -1;
         }
