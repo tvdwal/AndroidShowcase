@@ -15,8 +15,10 @@ import com.example.tim.androidshowcase.R;
  */
 
 public class PlanetImageFragment extends Fragment {
-    private ImageView planetImageView;
-    private int latestImageResId;
+    final String planetImageKey = "PlanetImageKey";
+    ImageView planetImageView;
+    int latestImageResId;
+    int defaultResId = R.drawable.earth;
 
     @Nullable
     @Override
@@ -25,9 +27,15 @@ public class PlanetImageFragment extends Fragment {
 
         planetImageView = (ImageView)view.findViewById(R.id.imageViewPlanetImage);
 
-        setDisplayedDescription(R.drawable.earth);
+        int resId = savedInstanceState == null ? defaultResId : savedInstanceState.getInt(planetImageKey, defaultResId);
+        setDisplayedDescription(resId);
 
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt(planetImageKey, latestImageResId);
     }
 
     public void setDisplayedDescription(int resId) {

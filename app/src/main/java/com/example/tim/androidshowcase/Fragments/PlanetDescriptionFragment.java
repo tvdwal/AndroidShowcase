@@ -15,9 +15,10 @@ import com.example.tim.androidshowcase.R;
  */
 
 public class PlanetDescriptionFragment extends Fragment {
-    private TextView textViewDescription;
-    private String[] planetDescriptions;
-    private int latestDescriptionIndex;
+    final String planetDescriptionKey = "PlanetDescriptionKey";
+    TextView textViewDescription;
+    String[] planetDescriptions;
+    int latestDescriptionIndex;
 
     @Nullable
     @Override
@@ -27,7 +28,8 @@ public class PlanetDescriptionFragment extends Fragment {
         planetDescriptions = getResources().getStringArray(R.array.planetDescriptions);
         textViewDescription = (TextView)  view.findViewById(R.id.textViewPlanetDescription);
 
-        setDisplayedDescription(0);
+        int index = savedInstanceState == null ? 0 : savedInstanceState.getInt(planetDescriptionKey, 0);
+        setDisplayedDescription(index);
 
         return view;
     }
@@ -35,5 +37,10 @@ public class PlanetDescriptionFragment extends Fragment {
     public void setDisplayedDescription(int index) {
         latestDescriptionIndex = index;
         textViewDescription.setText(planetDescriptions[latestDescriptionIndex]);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt(planetDescriptionKey, latestDescriptionIndex);
     }
 }
