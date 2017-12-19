@@ -21,6 +21,7 @@
         <activity android:name=".Activities.RecycleViewDetailedActivity" />
         <activity android:name=".Activities.RestClientActivity" />
         <activity android:name=".Activities.FragmentsActivity" />
+        <activity android:name=".Activities.ViewModelActivity" />
 
         <receiver android:name=".Activities.RestClientActivity$MyPokemonReceiver"></receiver>
 
