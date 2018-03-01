@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="4">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewSharedPreferenceOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Local SharedPreferences:"/>
+
+        <Button
+            android:id="@+id/buttonSharedPreferenceUpdateLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Update"/>
+
+        <EditText
+            android:id="@+id/editTextSharedPreference"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:layout_below="@id/textViewSharedPreferenceOne"
+            android:layout_above="@id/buttonSharedPreferenceUpdateLocal"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
