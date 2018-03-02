@@ -8,14 +8,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
+        android:layout_weight="3">
 
         <TextView
             android:id="@+id/textViewSharedPreferenceOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Local SharedPreferences:"/>
+            android:text="Primitive SharedPreferences:"/>
 
         <Button
             android:id="@+id/buttonSharedPreferenceUpdateLocal"
@@ -32,6 +31,34 @@
             android:layout_below="@id/textViewSharedPreferenceOne"
             android:layout_above="@id/buttonSharedPreferenceUpdateLocal"/>
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/textViewSharedPreferenceTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonSharedPreferenceAddNonPrimitive"
+            android:text="Non-Primitive SharedPreferences:"/>
+        <Button
+            android:id="@+id/buttonSharedPreferenceAddNonPrimitive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="addNonPrimitiveType"
+            android:text="Add Non Primitive Type"/>
+
+        <Button
+            android:id="@+id/buttonSharedPreferenceAddNonPrimitiveTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/buttonSharedPreferenceAddNonPrimitive"
+            android:onClick="addNonPrimitiveTypeTwo"
+            android:text="Display"/>
     </RelativeLayout>
 
 
