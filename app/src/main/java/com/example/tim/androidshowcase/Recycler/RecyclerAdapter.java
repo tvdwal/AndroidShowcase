@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tim.androidshowcase.Activities.RecycleViewDetailedActivity_;
 import com.example.tim.androidshowcase.R;
-import com.example.tim.androidshowcase.Activities.RecycleViewDetailedActivity;
 
 import java.util.ArrayList;
 
@@ -44,7 +44,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.DataOb
         @Override
         public void onClick(View v) {
             Context context = itemView.getContext();
-            Intent sharedElementTransitionIntent = new Intent(context, RecycleViewDetailedActivity.class);
+            Intent sharedElementTransitionIntent = new Intent(context, RecycleViewDetailedActivity_.class);
             sharedElementTransitionIntent.putExtra("source", mDataObject);
             Pair<View, String> p1 = Pair.create((View)mImageView, "sharedElementTransitionImage");
             Pair<View, String> p2 = Pair.create((View)mTextView1, "sharedElementTransitionTitle");

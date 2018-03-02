@@ -9,27 +9,26 @@ import com.example.tim.androidshowcase.R;
 import com.example.tim.androidshowcase.Recycler.DataObject;
 import com.example.tim.androidshowcase.Recycler.RecyclerAdapter;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
 import java.util.ArrayList;
 
+@EActivity(R.layout.activity_recycler_view_shared_element)
 public class RecyclerViewSharedElementActivity extends AppCompatActivity {
 
+    @ViewById(R.id.recyclerView)
     RecyclerView mRecyclerView;
+
     LinearLayoutManager mLinearLayoutManager;
     RecyclerAdapter mRecyclerAdapter;
     ArrayList<DataObject> mDataObjectList;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view_shared_element);
-
-        initiateRecyclerView();
-    }
-
-    private void initiateRecyclerView() {
+    @AfterViews
+    public void initiateRecyclerView() {
         fillArrayListWithPhotos();
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mRecyclerAdapter = new RecyclerAdapter(mDataObjectList);
 

@@ -9,12 +9,14 @@ import com.example.tim.androidshowcase.Fragments.PlanetFragmentCoordinator;
 import com.example.tim.androidshowcase.Fragments.PlanetImageFragment;
 import com.example.tim.androidshowcase.R;
 
+import org.androidannotations.annotations.EActivity;
+
+@EActivity(R.layout.activity_fragments)
 public class FragmentsActivity extends FragmentActivity implements PlanetFragmentCoordinator{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragments);
     }
 
     @Override
