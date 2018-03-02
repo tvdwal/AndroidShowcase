@@ -12,6 +12,10 @@ import android.widget.EditText;
 
 import com.example.tim.androidshowcase.Constants;
 import com.example.tim.androidshowcase.R;
+import com.example.tim.androidshowcase.REST.Pokemon;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -91,5 +95,32 @@ public class SharedPreferenceActivity extends Activity {
         String latestActivity = sharedPreferences.getString(Constants.LATEST_ACTIVITY, "");
 
         editText.append("Key: " + Constants.LATEST_ACTIVITY + ", Value: " + latestActivity + "\n");
+    }
+
+    public void addNonPrimitiveType(View view) {
+        Pokemon pokemon = new Pokemon();
+        pokemon.setHeight(181);
+        pokemon.setWeight(80);
+        pokemon.setName("Tim");
+        pokemon.setId(0);
+
+        SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        //serialization
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(pokemon, Pokemon.class);
+        editor.putString("NONPRIMITIVE", jsonString);
+        editor.apply();
+    }
+
+    public void addNonPrimitiveTypeTwo(View view) {
+        SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        String fromJson = sharedPreferences.getString("NONPRIMITIVE", "");
+
+        //deserialization
+        Gson gson = new Gson();
+        Pokemon p = gson.fromJson(fromJson, Pokemon.class);
+        editText.append(p.toString() + "\n");
     }
 }
