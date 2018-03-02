@@ -10,26 +10,26 @@ import android.widget.TextView;
 import com.example.tim.androidshowcase.R;
 import com.example.tim.androidshowcase.Recycler.DataObject;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
+@EActivity(R.layout.activity_recycle_view_detailed)
 public class RecycleViewDetailedActivity extends AppCompatActivity {
 
+    @ViewById(R.id.recycler_detailed_view_image)
     ImageView imageView;
+
+    @ViewById(R.id.recycler_detailed_view_title)
     TextView textViewTitle;
+
+    @ViewById(R.id.recycler_detailed_view_description)
     TextView textViewDescription;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycle_view_detailed);
 
-        imageView = (ImageView)findViewById(R.id.recycler_detailed_view_image);
-        textViewTitle = (TextView)findViewById(R.id.recycler_detailed_view_title);
-        textViewDescription = (TextView)findViewById(R.id.recycler_detailed_view_description);
-
-        FillViewWithData(getIntent());
-    }
-
-    private void FillViewWithData(Intent intent) {
-        DataObject dataObject = (DataObject) intent.getSerializableExtra("source");
+    @AfterViews
+    public void FillViewWithData() {
+        DataObject dataObject = (DataObject) getIntent().getSerializableExtra("source");
         imageView.setImageResource(dataObject.getResId());
         textViewTitle.setText(dataObject.getTitle());
         textViewDescription.setText(dataObject.getDescription());

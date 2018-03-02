@@ -18,26 +18,36 @@ import com.example.tim.androidshowcase.R;
 import com.example.tim.androidshowcase.REST.Pokemon;
 import com.example.tim.androidshowcase.REST.PokemonController;
 
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Background;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.EReceiver;
+import org.androidannotations.annotations.UiThread;
+import org.androidannotations.annotations.ViewById;
+
+@EActivity(R.layout.activity_rest_client)
 public class RestClientActivity extends AppCompatActivity {
 
+    @ViewById(R.id.rest_view_text_view)
     TextView textViewRestResult;
-    EditText editTextRestUrl;
-    Spinner spinnerRequestTypes;
-    Button buttonRequest;
 
-    PokemonController restPokemonController;
+    @ViewById(R.id.rest_view_edit_text)
+    EditText editTextRestUrl;
+
+    @ViewById(R.id.rest_view_spinner)
+    Spinner spinnerRequestTypes;
+
+    @Click(R.id.rest_view_button)
+    void restViewButtonClicked()
+    {
+        ExecuteRestCall(editTextRestUrl.getText().toString());
+    }
+
     MyPokemonReceiver myPokemonReceiver;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rest_client);
-
-        textViewRestResult = (TextView) findViewById(R.id.rest_view_text_view);
-        editTextRestUrl = (EditText) findViewById(R.id.rest_view_edit_text);
-        spinnerRequestTypes = (Spinner) findViewById(R.id.rest_view_spinner);
-        buttonRequest = (Button) findViewById(R.id.rest_view_button);
-
+    @AfterViews()
+    void initView(){
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.rest_request_types, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerRequestTypes.setAdapter(adapter);
@@ -52,14 +62,10 @@ public class RestClientActivity extends AppCompatActivity {
 
             }
         });
+    }
 
-        buttonRequest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ExecuteRestCall(editTextRestUrl.getText().toString());
-            }
-        });
-
+    @AfterViews
+    void registerService(){
         myPokemonReceiver = new MyPokemonReceiver();
         this.registerReceiver(myPokemonReceiver, new IntentFilter(MyPokemonReceiver.ACTION));
     }
@@ -71,9 +77,14 @@ public class RestClientActivity extends AppCompatActivity {
 
     public class MyPokemonReceiver extends BroadcastReceiver {
         public static final String ACTION = "com.example.tim.androidshowcase.ACTION_POKEMON";
+
         @Override
         public void onReceive(Context context, Intent intent) {
-            textViewRestResult.setText(intent.getStringExtra("pokemon"));
+            updateTextView(intent.getStringExtra("pokemon"));
+        }
+
+        public void updateTextView(String txt) {
+            textViewRestResult.setText(txt);
         }
     }
 }
