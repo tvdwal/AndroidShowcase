@@ -3,7 +3,7 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment class="com.example.tim.androidshowcase.Fragments.PlanetNamesFragment"
+    <fragment class="com.example.tim.androidshowcase.Fragments.PlanetNamesListFragment"
         android:id="@+id/planetNamesFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
