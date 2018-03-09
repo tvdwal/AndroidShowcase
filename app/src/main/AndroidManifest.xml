@@ -11,18 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.MainActivity_">
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.RecyclerViewSharedElementActivity_" />
-        <activity android:name=".Activities.RecycleViewDetailedActivity_" />
-        <activity android:name=".Activities.RestClientActivity_" />
-        <activity android:name=".Activities.FragmentsActivity_" />
-        <activity android:name=".Activities.ViewModelActivity_" />
-        <activity android:name=".Activities.SharedPreferenceActivity_" />
+        <activity android:name=".Activities.RecyclerViewSharedElementActivity" />
+        <activity android:name=".Activities.RecycleViewDetailedActivity" />
+        <activity android:name=".Activities.RestClientActivity" />
+        <activity android:name=".Activities.FragmentsActivity" />
+        <activity android:name=".Activities.ViewModelActivity" />
+        <activity android:name=".Activities.SharedPreferenceActivity" />
 
         <receiver android:name=".Activities.RestClientActivity$MyPokemonReceiver"></receiver>
 

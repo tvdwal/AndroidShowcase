@@ -9,42 +9,56 @@ import android.widget.TextView;
 
 import com.example.tim.androidshowcase.R;
 
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
 import org.w3c.dom.Text;
 
 /**
  * Created by tvandewal on 19-12-2017.
  */
 
-@EActivity(R.layout.activity_viewmodel)
 public class ViewModelActivity extends Activity {
 
-    @ViewById(R.id.textViewCounter)
-    TextView tvCounter;
-
-    @Click(R.id.buttonPlusOne)
-    void buttonPlusOneClicked() {
-        updateCounter(true, 1);
-    }
-
-    @Click(R.id.buttonPlusTwo)
-    void buttonPlusTwoClicked() {
-        updateCounter(true, 2);
-    }
-
-    @Click(R.id.buttonMinusOne)
-    void buttonMinusOneClicked() {
-        updateCounter(false, 1);
-    }
-
-    @Click(R.id.buttonMinusTwo)
-    void buttonMinusTwoClicked() {
-        updateCounter(false, 2);
-    }
-
     int counter = 0;
+    TextView tvCounter;
+    Button btnPlusOne;
+    Button btnPlusTwo;
+    Button btnMinusOne;
+    Button btnMinusTwo;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_viewmodel);
+
+        tvCounter = (TextView)findViewById(R.id.textViewCounter);
+        btnPlusOne = (Button)findViewById(R.id.buttonPlusOne);
+        btnPlusTwo = (Button)findViewById(R.id.buttonPlusTwo);
+        btnMinusOne = (Button)findViewById(R.id.buttonMinusOne);
+        btnMinusTwo = (Button)findViewById(R.id.buttonMinusTwo);
+        btnPlusOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCounter(true, 1);
+            }
+        });
+        btnPlusTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCounter(true, 2);
+            }
+        });
+        btnMinusOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCounter(false, 1);
+            }
+        });
+        btnMinusTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateCounter(false, 2);
+            }
+        });
+    }
 
     private void updateCounter(boolean increment, int value)
     {

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.tim.androidshowcase.Constants;
@@ -14,29 +15,35 @@ import com.example.tim.androidshowcase.R;
 import com.example.tim.androidshowcase.REST.Pokemon;
 import com.google.gson.Gson;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
-
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
  * Created by tvandewal on 1-3-2018.
  */
-@EActivity(R.layout.activity_sharedpreference)
+
 public class SharedPreferenceActivity extends Activity {
 
-    @ViewById(R.id.editTextSharedPreference)
     EditText editText;
 
-    @Click(R.id.buttonSharedPreferenceUpdateLocal)
-    void buttonSharedPreferenceUpdateLocalClicked() {
-        getLatestActivity();
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sharedpreference);
+        editText = (EditText)findViewById(R.id.editTextSharedPreference);
+        Button update = (Button)findViewById(R.id.buttonSharedPreferenceUpdateLocal);
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getLatestActivity();
+            }
+        });
+
+        insertLocalSharedPreferences();
     }
 
-    @AfterViews
-    public void insertLocalSharedPreferences()
+
+    private void insertLocalSharedPreferences()
     {
         /*
         Shared preferences should always be private. Use flag: MODE_PRIVATE
