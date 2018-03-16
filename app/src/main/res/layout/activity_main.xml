@@ -11,7 +11,7 @@
         android:id="@+id/toolbarMainActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_light"
+        android:background="@color/primary"
         android:minHeight="?attr/actionBarSize"
         android:elevation="5dp">
 
@@ -19,32 +19,42 @@
 
     <Button
         android:id="@+id/btnRecyclerViewSharedElement"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/DefaultButton"
         android:text="RecyclerView + Shared Elements"/>
 
     <Button
         android:id="@+id/btnRestClient"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/DefaultButton"
         android:text="REST Client"/>
 
     <Button
         android:id="@+id/btnFragments"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/DefaultButton"
         android:text="Fragments"/>
 
     <Button
         android:id="@+id/btnViewModel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/DefaultButton"
         android:text="ViewModel"/>
 
     <Button
         android:id="@+id/btnSharedPreferences"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/DefaultButton"
         android:text="Shared Preferences"/>
 
 </LinearLayout>
