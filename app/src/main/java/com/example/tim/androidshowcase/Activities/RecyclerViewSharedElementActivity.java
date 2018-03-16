@@ -29,7 +29,7 @@ public class RecyclerViewSharedElementActivity extends AppCompatActivity {
     private void initiateRecyclerView() {
         fillArrayListWithPhotos();
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.recyclerView);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mRecyclerAdapter = new RecyclerAdapter(mDataObjectList);
 
@@ -39,10 +39,10 @@ public class RecyclerViewSharedElementActivity extends AppCompatActivity {
 
     private void fillArrayListWithPhotos() {
         mDataObjectList = new ArrayList<>();
-        mDataObjectList.add(new DataObject(R.drawable.ic_camera_enhance_black_48dp, "Title 1", loremIpsum()));
-        mDataObjectList.add(new DataObject(R.drawable.ic_camera_enhance_black_48dp, "Title 2", loremIpsum()));
-        mDataObjectList.add(new DataObject(R.drawable.ic_camera_enhance_black_48dp, "Title 3", loremIpsum()));
-        mDataObjectList.add(new DataObject(R.drawable.ic_camera_enhance_black_48dp, "Title 4", loremIpsum()));
+        mDataObjectList.add(new DataObject(R.drawable.dog_1, "Doggo", loremIpsum()));
+        mDataObjectList.add(new DataObject(R.drawable.penguin_1, "Tuxxy", loremIpsum()));
+        mDataObjectList.add(new DataObject(R.drawable.deer_1, "Hornsson", loremIpsum()));
+        mDataObjectList.add(new DataObject(R.drawable.fox_1, "Orange", loremIpsum()));
     }
 
     private String loremIpsum() {

@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context="com.example.tim.androidshowcase.Activities.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_light"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="5dp">
+
+    </android.support.v7.widget.Toolbar>
 
     <Button
         android:id="@+id/btnRecyclerViewSharedElement"
