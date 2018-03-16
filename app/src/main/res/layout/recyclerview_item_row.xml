@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:orientation="horizontal"
-    android:background="#CCCCCC">
+    android:background="@color/divider">
     <ImageView
         android:id="@+id/recycler_view_item_image"
         android:layout_width="0dp"
