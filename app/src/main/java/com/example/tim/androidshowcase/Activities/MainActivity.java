@@ -1,9 +1,7 @@
 package com.example.tim.androidshowcase.Activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,8 +15,6 @@ import com.example.tim.androidshowcase.Constants;
 import com.example.tim.androidshowcase.R;
 
 public class MainActivity extends AppCompatActivity {
-
-    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setToolbar()
     {
-        toolbar = findViewById(R.id.toolbarMainActivity);
+        Toolbar toolbar = findViewById(R.id.default_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         toolbar.setTitle("Welcome");
