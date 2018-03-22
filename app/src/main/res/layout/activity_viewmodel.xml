@@ -7,24 +7,28 @@
         android:id="@+id/buttonPlusOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="buttonPlusOneOnClick"
         android:text="+1"/>
 
     <Button
         android:id="@+id/buttonPlusTwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="buttonPlusTwoOnClick"
         android:text="+2"/>
 
     <Button
         android:id="@+id/buttonMinusOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="buttonMinusOneOnClick"
         android:text="-1"/>
 
     <Button
         android:id="@+id/buttonMinusTwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="buttonMinusTwoOnClick"
         android:text="-2"/>
 
     <TextView
