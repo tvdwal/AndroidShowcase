@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layoutRealmNewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:id="@+id/textViewRealmName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            style="@style/TextViewTitle"/>
+
+        <EditText
+            android:id="@+id/editTextRealmName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/textViewRealmName"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutRealmNewAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/layoutRealmNewName">
+
+        <TextView
+            android:id="@+id/textViewRealmAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age:"
+            style="@style/TextViewTitle"/>
+
+        <EditText
+            android:id="@+id/editTextRealmAge"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"/>
+
+        <SeekBar
+            android:id="@+id/seekBarRealmAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textViewRealmAge"
+            android:layout_toLeftOf="@id/editTextRealmAge"
+            android:layout_centerVertical="true"
+            android:min="18"
+            android:max="100" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutRealmNewProfession"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/layoutRealmNewAge">
+        <TextView
+            android:id="@+id/textViewRealmProfession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profession:"
+            style="@style/TextViewTitle"/>
+
+        <EditText
+            android:id="@+id/editTextRealmProfession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/textViewRealmProfession"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

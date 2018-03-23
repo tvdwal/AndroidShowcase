@@ -24,6 +24,16 @@
         <item name="android:padding">8dp</item>
     </style>
 
+    <style name="TextViewDefault">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="TextViewTitle">
+        <item name="android:textColor">@color/primary_dark</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
     <style name="MaterialTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="MaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

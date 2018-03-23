@@ -49,4 +49,12 @@
         style="@style/DefaultButton"
         android:text="Shared Preferences"/>
 
+    <Button
+        android:id="@+id/btnRealm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/DefaultButton"
+        android:text="Realm"/>
+
 </LinearLayout>
