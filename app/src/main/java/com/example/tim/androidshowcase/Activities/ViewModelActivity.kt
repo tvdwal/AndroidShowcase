@@ -1,8 +1,8 @@
 package com.example.tim.androidshowcase.Activities
 
-import android.app.Activity
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.view.View
+import com.example.tim.androidshowcase.MyViewModel
 
 import com.example.tim.androidshowcase.R
 import kotlinx.android.synthetic.main.activity_viewmodel.*
@@ -11,37 +11,36 @@ import kotlinx.android.synthetic.main.activity_viewmodel.*
  * Created by tvandewal on 19-12-2017.
  */
 
-open class ViewModelActivity : Activity() {
+open class ViewModelActivity : FragmentsActivity() {
 
-    var counter = 0
+    lateinit var viewModel: MyViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_viewmodel)
+
+        viewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
+        textViewCounter.setText(viewModel.getScore().toString())
+
+        initButtons()
     }
 
-    fun buttonPlusOneOnClick(view: View) {
-        updateCounter(true, 1)
-    }
-
-    fun buttonPlusTwoOnClick(view: View) {
-        updateCounter(true, 2)
-    }
-
-    fun buttonMinusOneOnClick(view: View) {
-        updateCounter(false, 1)
-    }
-
-    fun buttonMinusTwoOnClick(view: View) {
-        updateCounter(false, 2)
-    }
-
-    private fun updateCounter(increment: Boolean, value: Int) {
-        if (increment) {
-            counter += value
-        } else {
-            counter -= value
+    fun initButtons() {
+        buttonPlusOne.setOnClickListener {
+            viewModel.increaseScore(1)
+            textViewCounter.setText(viewModel.getScore().toString())
         }
-        textViewCounter.setText(counter.toString())
+        buttonPlusTwo.setOnClickListener {
+            viewModel.increaseScore(2)
+            textViewCounter.setText(viewModel.getScore().toString())
+        }
+        buttonMinusOne.setOnClickListener {
+            viewModel.decreaseScore(1)
+            textViewCounter.setText(viewModel.getScore().toString())
+        }
+        buttonMinusTwo.setOnClickListener {
+            viewModel.decreaseScore(2)
+            textViewCounter.setText(viewModel.getScore().toString())
+        }
     }
 }
