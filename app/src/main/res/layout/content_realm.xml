@@ -8,4 +8,12 @@
     tools:context="com.example.tim.androidshowcase.Activities.RealmActivity"
     tools:showIn="@layout/activity_realm">
 
+    <RelativeLayout
+        android:id="@+id/layoutRealmFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
+
 </android.support.constraint.ConstraintLayout>
