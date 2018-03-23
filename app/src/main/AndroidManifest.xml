@@ -14,6 +14,7 @@
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,8 +25,12 @@
         <activity android:name=".Activities.ViewModelActivity" />
         <activity android:name=".Activities.SharedPreferenceActivity" />
 
-        <receiver android:name=".Activities.RestClientActivity$MyPokemonReceiver"></receiver>
+        <receiver android:name=".Activities.RestClientActivity$MyPokemonReceiver" />
 
+        <activity
+            android:name=".Activities.RealmActivity"
+            android:label="@string/title_activity_realm"
+            android:theme="@style/MaterialTheme"></activity>
     </application>
 
 </manifest>
