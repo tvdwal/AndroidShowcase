@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setButtons() {
-        btnRecyclerViewSharedElement.setOnClickListener { goToActivity(RecycleViewDetailedActivity::class.java) }
+        btnRecyclerViewSharedElement.setOnClickListener { goToActivity(RecyclerViewSharedElementActivityg::class.java) }
         btnRestClient.setOnClickListener { goToActivity(RestClientActivity::class.java) }
         btnFragments.setOnClickListener { goToActivity(FragmentsActivity::class.java) }
         btnViewModel.setOnClickListener { goToActivity(ViewModelActivity::class.java) }
