@@ -4,25 +4,21 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.example.tim.androidshowcase.R
-import com.example.tim.androidshowcase.Realm.RealmNewItemFragment
 import com.example.tim.androidshowcase.Realm.RealmOverviewFragment
 
 import kotlinx.android.synthetic.main.activity_realm.*
 
 class RealmActivity : AppCompatActivity() {
 
+    lateinit var currentFragment: Fragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_realm)
-        setSupportActionBar(toolbar)
 
-        showFragment(RealmOverviewFragment())
+        currentFragment = RealmOverviewFragment()
+        showFragment(currentFragment)
 
-        fab.setOnClickListener {
-            val fragment = RealmNewItemFragment()
-            showFragment(fragment)
-            fab.setImageResource(fragment.getFabIcon())
-        }
     }
 
     fun showFragment(fragment: Fragment) {

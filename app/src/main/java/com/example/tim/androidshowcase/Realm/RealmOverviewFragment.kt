@@ -13,17 +13,9 @@ import com.example.tim.androidshowcase.R
 
 class RealmOverviewFragment : Fragment() {
 
-    companion object {
-        val fab_icon = R.drawable.ic_home_white_48dp
-    }
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view: View = inflater!!.inflate(R.layout.fragment_realm_overview, container, false)
         return view
-    }
-
-    fun getFabIcon(): Int {
-        return fab_icon
     }
 
 }
