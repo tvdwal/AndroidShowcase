@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewRealmDetailedName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:transitionName="sharedElementTransitionRealmName"
+        style="@style/TextViewTitle"/>
+
+    <ImageView
+        android:id="@+id/imageViewRealmDetailedPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/textViewRealmDetailedAge"
+        android:layout_below="@id/textViewRealmDetailedName"
+        android:transitionName="sharedElementTransitionRealmPhoto"/>
+
+    <ImageView
+        android:id="@+id/imageViewRealmDetailedStar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@id/imageViewRealmDetailedPhoto"
+        android:layout_alignEnd="@id/imageViewRealmDetailedPhoto"
+        android:transitionName="sharedElementTransitionRealmStar"
+        android:src="@drawable/ic_stars_white_48dp"/>
+
+    <TextView
+        android:id="@+id/textViewRealmDetailedAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/textViewRealmDetailedProfession"
+        android:transitionName="sharedElementTransitionRealmAge"
+        style="@style/TextViewSubtitle"/>
+
+    <TextView
+        android:id="@+id/textViewRealmDetailedProfession"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        style="@style/TextViewSubtitle"/>
+</RelativeLayout>

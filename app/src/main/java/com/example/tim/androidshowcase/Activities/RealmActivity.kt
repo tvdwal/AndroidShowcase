@@ -2,7 +2,10 @@ package com.example.tim.androidshowcase.Activities
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.transition.TransitionInflater
+import android.transition.TransitionSet
 import com.example.tim.androidshowcase.R
 import com.example.tim.androidshowcase.Realm.RealmViewModel
 

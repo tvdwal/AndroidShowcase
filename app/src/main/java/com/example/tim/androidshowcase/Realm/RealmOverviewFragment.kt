@@ -33,13 +33,22 @@ class RealmOverviewFragment : Fragment() {
         persons.add(Person("Tim2", 22, "CFO"))
         persons.add(Person("Tim3", 23, "CIO"))
         persons.add(Person("Tim4", 24, "COO"))
+        persons.add(Person("Tim4", 24, "COO"))
+        persons.add(Person("Tim4", 24, "COO"))
+        persons.add(Person("Tim4", 24, "COO"))
+        persons.add(Person("Tim4", 24, "COO"))
+        persons.add(Person("Tim4", 24, "COO"))
+        persons.add(Person("Tim4", 24, "COO"))
+        persons.add(Person("Tim4", 24, "COO"))
+        persons.add(Person("Tim4", 24, "COO"))
+        persons.add(Person("Tim4", 24, "COO"))
     }
 
     private fun initiateRecyclerView() {
         fillArrayListWithPhotos()
 
         recyclerViewRealm.layoutManager = LinearLayoutManager(activity)
-        recyclerViewRealm.adapter = RealmRecyclerAdapter(persons)
+        recyclerViewRealm.adapter = RealmRecyclerAdapter(persons, this.fragmentManager)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
