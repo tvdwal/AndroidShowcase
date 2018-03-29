@@ -21,10 +21,11 @@ class RealmNewItemFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     }
 
     private fun editTextHasValue(editText: EditText): Boolean {
-        if (editText.text.toString().trim().isNotBlank())
+        if (editText.text.toString().trim().isNotBlank()) {
             editText.error = null
             return true
-        editText.error = "Error"
+        }
+        editText.error = "Empty value"
         return false
     }
 
