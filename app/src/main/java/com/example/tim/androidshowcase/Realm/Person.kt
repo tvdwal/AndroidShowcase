@@ -1,6 +1,8 @@
 package com.example.tim.androidshowcase.Realm
 
-class Person {
+import java.io.Serializable
+
+class Person : Serializable {
     var name: String
     var age: Int
     var profession: String
