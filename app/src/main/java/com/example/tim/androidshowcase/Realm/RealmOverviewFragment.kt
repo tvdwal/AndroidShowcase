@@ -48,7 +48,7 @@ class RealmOverviewFragment : Fragment() {
         fillArrayListWithPhotos()
 
         recyclerViewRealm.layoutManager = LinearLayoutManager(activity)
-        recyclerViewRealm.adapter = RealmRecyclerAdapter(persons, this.fragmentManager)
+        recyclerViewRealm.adapter = RealmRecyclerAdapter(persons, this.fragmentManager, context)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
