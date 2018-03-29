@@ -19,8 +19,9 @@
             android:id="@+id/editTextRealmName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@id/textViewRealmName"/>
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/textViewRealmName"
+            android:hint="John Doe"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -41,7 +42,9 @@
             android:id="@+id/editTextRealmAge"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"/>
+            android:inputType="number"
+            android:layout_alignParentEnd="true"
+            android:hint="0"/>
 
         <SeekBar
             android:id="@+id/seekBarRealmAge"
@@ -71,8 +74,17 @@
             android:id="@+id/editTextRealmProfession"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@id/textViewRealmProfession"/>
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/textViewRealmProfession"
+            android:hint="Spy"/>
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/buttonSavePerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutRealmNewProfession"
+        android:text="Save"
+        style="@style/DefaultButton"/>
 
 </RelativeLayout>

@@ -1,6 +1,5 @@
 package com.example.tim.androidshowcase
 
-import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.ViewModel
 
 /**

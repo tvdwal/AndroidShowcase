@@ -5,13 +5,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.tim.androidshowcase.Activities.RealmActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <RelativeLayout
+        android:id="@+id/layoutRealmFragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/MaterialTheme.AppBarOverlay">
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_realm" />
+        android:layout_height="match_parent">
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
