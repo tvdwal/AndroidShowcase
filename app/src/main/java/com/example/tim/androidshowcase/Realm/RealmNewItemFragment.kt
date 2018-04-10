@@ -1,5 +1,6 @@
 package com.example.tim.androidshowcase.Realm
 
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -20,6 +21,8 @@ class RealmNewItemFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
         val tag: String = "RealmNewItem"
     }
 
+    lateinit var realmViewModel: RealmViewModel
+
     private fun editTextHasValue(editText: EditText): Boolean {
         if (editText.text.toString().trim().isNotBlank()) {
             editText.error = null
@@ -36,7 +39,7 @@ class RealmNewItemFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     }
 
     private fun savePersonToDatabase(person: Person) {
-        // save to Realm db
+        realmViewModel.addPerson(person)
         fragmentManager.popBackStackImmediate()
     }
 
@@ -47,6 +50,7 @@ class RealmNewItemFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        realmViewModel = ViewModelProviders.of(activity).get(RealmViewModel::class.java)
         buttonSavePerson.setOnClickListener {
             if (checkFields()) {
                 var person = Person(

@@ -21,7 +21,7 @@ import java.util.ArrayList
  * Created by Tim on 4-7-2017.
  */
 
-class RealmRecyclerAdapter(val items: ArrayList<Person>,
+class RealmRecyclerAdapter(val dataSource: RealmViewModel,
                            val fragmentManager: android.support.v4.app.FragmentManager,
                            val context: Context) : RecyclerView.Adapter<RealmRecyclerAdapter.PersonHolder>() {
 
@@ -31,11 +31,11 @@ class RealmRecyclerAdapter(val items: ArrayList<Person>,
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return dataSource.getPersonList().size
     }
 
     override fun onBindViewHolder(holder: PersonHolder, position: Int) {
-        val person: Person = items[position]
+        val person: Person = dataSource.getPersonList()[position]
         holder.textViewName?.text = person.name
         holder.textViewAgeProfession?.text = person.age.toString() + ", " + person.profession
         holder.imageViewPhoto?.setImageResource(R.drawable.ic_account_box_white_48dp)
@@ -43,6 +43,7 @@ class RealmRecyclerAdapter(val items: ArrayList<Person>,
         holder.imageViewStar?.setImageResource(starResource)
         holder.itemView.setOnClickListener {
 
+            dataSource.selectedIndex = position
             val transitionSet = TransitionSet()
             transitionSet.addTransition(TransitionInflater.from(context).inflateTransition(android.R.transition.move))
             transitionSet.duration = 1000
