@@ -1,16 +1,21 @@
 package com.example.tim.androidshowcase.Realm
 
 import android.arch.lifecycle.ViewModelProviders
+import android.os.AsyncTask
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.SeekBar
+import android.widget.Toast
 import com.example.tim.androidshowcase.R
 import kotlinx.android.synthetic.main.fragment_realm_item_detailed.*
 import kotlinx.android.synthetic.main.fragment_realm_new_item.*
+import kotlinx.android.synthetic.main.fragment_three.*
 
 /**
  * Created by Tim on 23-3-2018.
@@ -39,6 +44,27 @@ class RealmDetailedFragment : Fragment() {
         val starResource = if (selectedPerson.important) R.drawable.ic_stars_yellow_48dp else R.drawable.ic_stars_white_48dp
         imageViewRealmDetailedStar.setImageResource(starResource)
         imageViewRealmDetailedPhoto.setImageResource(R.drawable.ic_account_box_white_48dp)
+        imageViewRealmDetailedPhoto.setOnClickListener {
+            DelayedTask().execute("")
+        }
+    }
+
+    inner class DelayedTask: AsyncTask<String, String, String>() {
+
+        override fun onPreExecute() {
+            super.onPreExecute()
+            Toast.makeText(context, "Starting task", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun doInBackground(vararg p0: String?): String {
+            // do stuff
+            return ""
+        }
+
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            Toast.makeText(context, "Finished task", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }
