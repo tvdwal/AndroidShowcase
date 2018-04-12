@@ -31,11 +31,11 @@ class RealmRecyclerAdapter(val dataSource: RealmViewModel,
     }
 
     override fun getItemCount(): Int {
-        return dataSource.getPersonList().size
+        return dataSource.getPersonList().value!!.size
     }
 
     override fun onBindViewHolder(holder: PersonHolder, position: Int) {
-        val person: Person = dataSource.getPersonList()[position]
+        val person: Person = dataSource.getPersonList().value!![position]
         holder.textViewName?.text = person.name
         holder.textViewAgeProfession?.text = person.age.toString() + ", " + person.profession
         holder.imageViewPhoto?.setImageResource(R.drawable.ic_account_box_white_48dp)

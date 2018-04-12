@@ -1,7 +1,9 @@
 package com.example.tim.androidshowcase.Realm
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -31,34 +33,25 @@ class RealmOverviewFragment : Fragment() {
         return view
     }
 
-    private fun fillArrayListWithPhotos() {
-        if (realmViewModel.getPersonList().size == 0) {
-            var p = Person("Tim", 25, "CEO");
-            p.setImportance(true)
-            realmViewModel.addPerson(p)
-            realmViewModel.addPerson((Person("Tim2", 22, "CFO")))
-            realmViewModel.addPerson((Person("Tim3", 23, "CIO")))
-            realmViewModel.addPerson((Person("Tim4", 24, "COO")))
-            realmViewModel.addPerson(p)
-            realmViewModel.addPerson((Person("Tim2", 22, "CFO")))
-            realmViewModel.addPerson((Person("Tim3", 23, "CIO")))
-            realmViewModel.addPerson((Person("Tim4", 24, "COO")))
-        }
-    }
-
     private fun initiateRecyclerView() {
-        fillArrayListWithPhotos()
-
         recyclerViewRealm.layoutManager = LinearLayoutManager(activity)
         recyclerViewRealm.adapter = RealmRecyclerAdapter(realmViewModel, this.fragmentManager, context)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         realmViewModel = ViewModelProviders.of(activity).get(RealmViewModel::class.java)
+        realmViewModel.getPersonList().observe(this, Observer {
+            initiateRecyclerView()
+        })
         fabRealm.setOnClickListener {
             FragmentHelper.replaceFragment(fragmentManager, R.id.layoutRealmFragmentContainer, RealmNewItemFragment())
         }
-        initiateRecyclerView()
+
+        var handler = Handler()
+        handler.postDelayed(Runnable {
+            realmViewModel.addPerson(Person("Bob", 50, "Janitor"))
+        }, 5000)
+
     }
 
 }
