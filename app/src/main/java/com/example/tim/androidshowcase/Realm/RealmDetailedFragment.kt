@@ -45,30 +45,12 @@ class RealmDetailedFragment : Fragment() {
         imageViewRealmDetailedStar.setImageResource(starResource)
         imageViewRealmDetailedPhoto.setImageResource(R.drawable.ic_account_box_white_48dp)
         imageViewRealmDetailedPhoto.setOnClickListener {
-            DelayedTask().execute("")
+            DummyTask(context).execute("")
         }
         imageViewRealmDetailedStar.setOnClickListener {
             selectedPerson.setImportance(!selectedPerson.important)
             val starResource = if (selectedPerson.important) R.drawable.ic_stars_yellow_48dp else R.drawable.ic_stars_white_48dp
             imageViewRealmDetailedStar.setImageResource(starResource)
-        }
-    }
-
-    inner class DelayedTask: AsyncTask<String, String, String>() {
-
-        override fun onPreExecute() {
-            super.onPreExecute()
-            Toast.makeText(context, "Starting task", Toast.LENGTH_SHORT).show()
-        }
-
-        override fun doInBackground(vararg p0: String?): String {
-            // do stuff
-            return ""
-        }
-
-        override fun onPostExecute(result: String?) {
-            super.onPostExecute(result)
-            Toast.makeText(context, "Finished task", Toast.LENGTH_SHORT).show()
         }
     }
 
