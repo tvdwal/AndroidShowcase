@@ -13,6 +13,10 @@ import kotlinx.android.synthetic.main.activity_realm.*
 
 class RealmActivity : AppCompatActivity() {
 
+    companion object {
+        val TAG = "RealmActivity"
+    }
+
     lateinit var realmViewModel: RealmViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {

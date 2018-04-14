@@ -15,6 +15,10 @@ import kotlinx.android.synthetic.main.default_toolbar.*
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        val TAG = "MainActivity"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

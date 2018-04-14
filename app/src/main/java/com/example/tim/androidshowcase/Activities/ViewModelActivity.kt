@@ -13,6 +13,10 @@ import kotlinx.android.synthetic.main.activity_viewmodel.*
 
 open class ViewModelActivity : FragmentsActivity() {
 
+    companion object {
+        val TAG = "ViewModelActivity"
+    }
+
     lateinit var viewModel: MyViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
