@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.example.tim.androidshowcase.Activities.RestClientActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

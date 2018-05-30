@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase.Activities;
+package com.example.tim.androidshowcase.Recycler;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

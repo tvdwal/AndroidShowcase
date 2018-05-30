@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tim.androidshowcase.Activities.RestClientActivity">
+    tools:context="com.example.tim.androidshowcase.REST.RestClientActivity">
 
     <EditText
         android:id="@+id/rest_view_edit_text"

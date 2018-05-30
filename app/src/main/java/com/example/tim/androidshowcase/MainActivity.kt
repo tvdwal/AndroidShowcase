@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase.Activities
+package com.example.tim.androidshowcase
 
 import android.content.Context
 import android.content.Intent
@@ -8,8 +8,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 
-import com.example.tim.androidshowcase.Constants
-import com.example.tim.androidshowcase.R
+import com.example.tim.androidshowcase.Fragments.FragmentsActivity
+import com.example.tim.androidshowcase.REST.RestClientActivity
+import com.example.tim.androidshowcase.Realm.RealmActivity
+import com.example.tim.androidshowcase.Recycler.RecyclerViewSharedElementActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.default_toolbar.*
 

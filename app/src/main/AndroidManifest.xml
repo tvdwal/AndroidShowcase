@@ -11,24 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
-        <activity android:name=".Activities.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.RecyclerViewSharedElementActivity" />
-        <activity android:name=".Activities.RecycleViewDetailedActivity" />
-        <activity android:name=".Activities.RestClientActivity" />
-        <activity android:name=".Activities.FragmentsActivity" />
-        <activity android:name=".Activities.ViewModelActivity" />
-        <activity android:name=".Activities.SharedPreferenceActivity" />
+        <activity android:name=".Recycler.RecyclerViewSharedElementActivity" />
+        <activity android:name=".Recycler.RecycleViewDetailedActivity" />
+        <activity android:name=".REST.RestClientActivity" />
+        <activity android:name=".Fragments.FragmentsActivity" />
+        <activity android:name=".ViewModelActivity" />
+        <activity android:name=".SharedPreferenceActivity" />
 
-        <receiver android:name=".Activities.RestClientActivity$MyPokemonReceiver" />
+        <receiver android:name=".REST.RestClientActivity$MyPokemonReceiver" />
 
         <activity
-            android:name=".Activities.RealmActivity"
+            android:name=".Realm.RealmActivity"
             android:label="@string/title_activity_realm"
             android:theme="@style/MaterialTheme"></activity>
     </application>

@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase.Activities;
+package com.example.tim.androidshowcase.Fragments;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.tim.androidshowcase.Activities.MainActivity">
+    tools:context="com.example.tim.androidshowcase.MainActivity">
 
     <include layout="@layout/default_toolbar" />
 

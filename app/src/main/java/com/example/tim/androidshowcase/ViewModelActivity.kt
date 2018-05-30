@@ -1,10 +1,9 @@
-package com.example.tim.androidshowcase.Activities
+package com.example.tim.androidshowcase
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import com.example.tim.androidshowcase.MyViewModel
+import com.example.tim.androidshowcase.Fragments.FragmentsActivity
 
-import com.example.tim.androidshowcase.R
 import kotlinx.android.synthetic.main.activity_viewmodel.*
 
 /**

@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase.Activities;
+package com.example.tim.androidshowcase.REST;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

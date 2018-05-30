@@ -1,4 +1,4 @@
-package com.example.tim.androidshowcase.Activities;
+package com.example.tim.androidshowcase;
 
 import android.app.Activity;
 import android.content.Context;
