@@ -49,8 +49,8 @@ class RealmDetailedFragment : Fragment() {
         }
         imageViewRealmDetailedStar.setOnClickListener {
             selectedPerson.setImportance(!selectedPerson.important)
-            val starResource = if (selectedPerson.important) R.drawable.ic_stars_yellow_48dp else R.drawable.ic_stars_white_48dp
-            imageViewRealmDetailedStar.setImageResource(starResource)
+            val starResource2 = if (selectedPerson.important) R.drawable.ic_stars_yellow_48dp else R.drawable.ic_stars_white_48dp
+            imageViewRealmDetailedStar.setImageResource(starResource2)
         }
     }
 
