@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "206406814275",
+    "firebase_url": "https://androidshowcase-855e0.firebaseio.com",
+    "project_id": "androidshowcase-855e0",
+    "storage_bucket": "androidshowcase-855e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206406814275:android:1635968f370aae40",
+        "android_client_info": {
+          "package_name": "com.example.tim.androidshowcase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206406814275-ds7ueb1ige5ii5ere4vqipqto1hrkf1q.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "206406814275-ds7ueb1ige5ii5ere4vqipqto1hrkf1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4d0Fn2gAU-KkloCPUzOLxKI_uXZJllXg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
