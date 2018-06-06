@@ -11,6 +11,7 @@ import com.android.databinding.library.baseAdapters.BR
 import com.example.tim.androidshowcase.MainActivity
 import com.example.tim.androidshowcase.R
 import com.example.tim.androidshowcase.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -25,13 +26,44 @@ class LoginActivity : AppCompatActivity() {
     }
 
     lateinit var loginViewModel: LoginViewModel
+    lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         loginViewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        setBindings()
         loadLoginDetails()
 
+        buttonLogin.setOnClickListener {
+            loginViewModel.loginRemember.value = checkBoxLogin.isChecked
+            loginViewModel.loginName.value = editTextLoginName.text.toString()
+            loginViewModel.loginPass.value = editTextLoginPass.text.toString()
+            loginAs(loginViewModel.loginName.value!!, loginViewModel.loginPass.value!!)
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        saveLoginDetails()
+    }
+
+    private fun loginAs(name: String, pass: String) {
+        firebaseAuth.signInWithEmailAndPassword(name, pass).addOnCompleteListener(this@LoginActivity, {
+            task -> run {
+                if (task.isSuccessful) {
+                    startActivity(Intent(this, MainActivity::class.java))
+                } else {
+                    Toast.makeText(this, "Could not login as " + loginViewModel.loginName.value, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        })
+    }
+
+    private fun setBindings() {
         val binding: ActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         binding.setVariable(BR.loginViewModel, loginViewModel)
         binding.executePendingBindings()
@@ -46,18 +78,6 @@ class LoginActivity : AppCompatActivity() {
             checkBoxLogin.isChecked = it!!
         })
 
-        buttonLogin.setOnClickListener {
-            loginViewModel.loginRemember.value = checkBoxLogin.isChecked
-            loginViewModel.loginName.value = editTextLoginName.text.toString()
-            loginViewModel.loginPass.value = editTextLoginPass.text.toString()
-            Toast.makeText(this, "Logged in as " + loginViewModel.loginName.value, Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, MainActivity::class.java))
-        }
-    }
-
-    override fun onStop() {
-        super.onStop()
-        saveLoginDetails()
     }
 
     private fun loadLoginDetails() {
