@@ -23,4 +23,11 @@
     <string name="hint_pass">************</string>
     <string name="button_login">Login</string>
     <string name="login_remember_me">Remember Me</string>
+    <string name="sign_up">Sign up</string>
+    <string name="email">Email</string>
+    <string name="next">Next</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="passwords_match">Passwords Match!</string>
+    <string name="passwords_dont_match">Passwords don\'t match!</string>
+    <string name="passwords_empty">Please fill in passwords</string>
 </resources>

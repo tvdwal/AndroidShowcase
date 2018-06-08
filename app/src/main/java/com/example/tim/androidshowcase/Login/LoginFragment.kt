@@ -26,12 +26,12 @@ class LoginFragment : Fragment() {
         private const val pref_tag_latest_name = "LOGIN_NAME"
         private const val pref_tag_latest_pass = "LOGIN_PASS"
         private const val pref_tag_remember_me = "LOGIN_REMEMBER"
-        val tag: String = "LoginFragment"
+        const val tag: String = "LoginFragment"
     }
 
-    lateinit var loginViewModel: LoginViewModel
-    lateinit var firebaseAuth: FirebaseAuth
-    lateinit var firebaseAuthListener: FirebaseAuth.AuthStateListener
+    private lateinit var loginViewModel: LoginViewModel
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseAuthListener: FirebaseAuth.AuthStateListener
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         loginViewModel = ViewModelProviders.of(activity).get(LoginViewModel::class.java)
@@ -51,14 +51,6 @@ class LoginFragment : Fragment() {
             checkBoxLogin.isChecked = it!!
         })
 
-        val btnLogin: Button = rootView!!.findViewById(R.id.buttonLogin)
-        btnLogin.setOnClickListener {
-            loginViewModel.loginRemember.value = checkBoxLogin.isChecked
-            loginViewModel.loginName.value = editTextLoginName.text.toString()
-            loginViewModel.loginPass.value = editTextLoginPass.text.toString()
-            loginAs(loginViewModel.loginName.value!!, loginViewModel.loginPass.value!!)
-        }
-
         loadLoginDetails()
 
         firebaseAuth = FirebaseAuth.getInstance()
@@ -71,7 +63,19 @@ class LoginFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-
+        buttonLogin.setOnClickListener {
+            loginViewModel.loginRemember.value = checkBoxLogin.isChecked
+            loginViewModel.loginName.value = editTextLoginName.text.toString()
+            loginViewModel.loginPass.value = editTextLoginPass.text.toString()
+            loginAs(loginViewModel.loginName.value!!, loginViewModel.loginPass.value!!)
+        }
+        buttonSignUp.setOnClickListener {
+            loginViewModel.loginName.value = editTextLoginName.text.toString()
+            activity.supportFragmentManager.beginTransaction()
+                    .replace(R.id.layoutLoginFragmentContainer, SignUpFragment(), SignUpFragment.tag)
+                    .addToBackStack(null)
+                    .commit()
+        }
     }
 
     override fun onDestroy() {
@@ -89,7 +93,6 @@ class LoginFragment : Fragment() {
                 Toast.makeText(this.activity, "Could not login as " + loginViewModel.loginName.value, Toast.LENGTH_SHORT).show()
             }
         }
-
         })
     }
 

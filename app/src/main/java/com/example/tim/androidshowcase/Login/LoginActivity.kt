@@ -10,8 +10,6 @@ class LoginActivity : AppCompatActivity() {
         const val TAG = "LoginActivity"
     }
 
-    lateinit var loginViewModel: LoginViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
