@@ -4,6 +4,7 @@ package com.example.tim.androidshowcase.Login
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.Editable
@@ -54,7 +55,7 @@ class SignUpFragment : Fragment(), TextWatcher {
     private fun initiateSignUpFlow(rootView: View) {
         val animation :Animation = AlphaAnimation(0f,1f)
         animation.interpolator = DecelerateInterpolator()
-        animation.duration = 500
+        animation.duration = 2000
 
         layoutSignUpPassword.visibility = View.GONE
         layoutSignUpPasswordConfirm.visibility = View.GONE
@@ -62,22 +63,30 @@ class SignUpFragment : Fragment(), TextWatcher {
 
         val buttonSignUp: Button = rootView.findViewById(R.id.buttonSignUpEmail)
         buttonSignUp.setOnClickListener {
-            layoutSignUpPassword.visibility = View.VISIBLE
-            layoutSignUpPassword.startAnimation(animation)
+            if (animation.hasEnded()) {
+                layoutSignUpPassword.visibility = View.VISIBLE
+                layoutSignUpPassword.startAnimation(animation)
+            }
         }
         val buttonPassword: Button = rootView.findViewById(R.id.buttonSignUpPassword)
         buttonPassword.setOnClickListener {
-            layoutSignUpPasswordConfirm.visibility = View.VISIBLE
-            layoutSignUpPasswordConfirm.startAnimation(animation)
+            if (animation.hasEnded()) {
+                layoutSignUpPasswordConfirm.visibility = View.VISIBLE
+                layoutSignUpPasswordConfirm.startAnimation(animation)
+            }
         }
         val buttonPasswordConfirm: Button = rootView.findViewById(R.id.buttonSignUpPasswordConfirm)
         buttonPasswordConfirm.setOnClickListener {
-            layoutSignUpFinish.visibility = View.VISIBLE
-            layoutSignUpFinish.startAnimation(animation)
+            if (animation.hasEnded()) {
+                layoutSignUpFinish.visibility = View.VISIBLE
+                layoutSignUpFinish.startAnimation(animation)
+            }
         }
 
         editTextLoginPass.addTextChangedListener(this)
         editTextLoginPassConfirm.addTextChangedListener(this)
+
+        layoutSignUpEmail.startAnimation(animation)
     }
 
     override fun afterTextChanged(p0: Editable?) {
