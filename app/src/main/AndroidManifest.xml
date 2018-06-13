@@ -31,6 +31,10 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name=".REST.RestService"
+            android:exported="false"/>
+
         <receiver android:name=".REST.RestClientActivity$MyPokemonReceiver" />
 
 
