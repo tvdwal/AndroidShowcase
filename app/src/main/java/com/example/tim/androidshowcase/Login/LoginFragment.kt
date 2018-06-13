@@ -84,6 +84,9 @@ class LoginFragment : Fragment() {
     }
 
     private fun loginAs(name: String, pass: String) {
+        if (name.isEmpty() || pass.isEmpty()) {
+            return
+        }
         firebaseAuth.signInWithEmailAndPassword(name, pass).addOnCompleteListener(context as Activity, {
             task -> run {
             if (task.isSuccessful) {
