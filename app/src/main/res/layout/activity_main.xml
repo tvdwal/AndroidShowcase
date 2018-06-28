@@ -57,4 +57,12 @@
         style="@style/DefaultButton"
         android:text="Realm"/>
 
+    <Button
+        android:id="@+id/btnCardIo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/DefaultButton"
+        android:text="CardIO"/>
+
 </LinearLayout>

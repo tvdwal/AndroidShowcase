@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.example.tim.androidshowcase.CardIO.CardIoActivity
 
 import com.example.tim.androidshowcase.Fragments.FragmentsActivity
 import com.example.tim.androidshowcase.REST.RestClientActivity
@@ -66,6 +67,7 @@ class MainActivity : AppCompatActivity() {
         btnViewModel.setOnClickListener { goToActivity(ViewModelActivity::class.java) }
         btnSharedPreferences.setOnClickListener { goToActivity(SharedPreferenceActivity::class.java) }
         btnRealm.setOnClickListener{ goToActivity(RealmActivity::class.java) }
+        btnCardIo.setOnClickListener{ goToActivity(CardIoActivity::class.java) }
     }
 
     private fun goToActivity(destinationActivity: Class<*>) {

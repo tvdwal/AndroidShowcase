@@ -11,8 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
-
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Recycler.RecyclerViewSharedElementActivity" />
         <activity android:name=".Recycler.RecycleViewDetailedActivity" />
         <activity android:name=".REST.RestClientActivity" />
@@ -33,7 +32,7 @@
 
         <receiver android:name=".REST.RestClientActivity$MyPokemonReceiver" />
 
-
+        <activity android:name=".CardIO.CardIoActivity"></activity>
     </application>
 
 </manifest>
