@@ -2,6 +2,7 @@ package com.example.tim.androidshowcase.REST
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.content.IntentFilter
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
@@ -53,7 +54,9 @@ class RestClientActivity : AppCompatActivity() {
     }
 
     private fun executeRestCall(pokemonId: String) {
-        val pokemonController = PokemonController()
-        pokemonController.start(pokemonId, this)
+        val intent = Intent(this, RestService::class.java)
+        intent.action = RestService.action_request_pokemon
+        intent.putExtra(RestService.extra_request_pokemon_id, pokemonId)
+        startService(intent)
     }
 }
