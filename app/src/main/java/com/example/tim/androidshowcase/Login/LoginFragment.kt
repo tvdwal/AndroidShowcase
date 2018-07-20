@@ -30,7 +30,6 @@ class LoginFragment : Fragment() {
     }
 
     private lateinit var loginViewModel: LoginViewModel
-    private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firebaseAuthListener: FirebaseAuth.AuthStateListener
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -53,7 +52,6 @@ class LoginFragment : Fragment() {
 
         loadLoginDetails()
 
-        firebaseAuth = FirebaseAuth.getInstance()
         firebaseAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val user = firebaseAuth.currentUser
 
@@ -87,16 +85,15 @@ class LoginFragment : Fragment() {
         if (name.isEmpty() || pass.isEmpty()) {
             return
         }
-        firebaseAuth.signInWithEmailAndPassword(name, pass).addOnCompleteListener(context as Activity, {
+        loginViewModel.firebaseAuth.signInWithEmailAndPassword(name, pass).addOnCompleteListener(context as Activity) {
             task -> run {
             if (task.isSuccessful) {
                 startActivity(Intent(context, MainActivity::class.java))
             } else {
-                startActivity(Intent(context, MainActivity::class.java))
                 Toast.makeText(this.activity, "Could not login as " + loginViewModel.loginName.value, Toast.LENGTH_SHORT).show()
             }
         }
-        })
+        }
     }
 
     private fun loadLoginDetails() {

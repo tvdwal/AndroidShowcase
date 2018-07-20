@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="loginViewModel"
-            type="com.example.tim.androidshowcase.Login.LoginViewModel"/>
+            type="com.example.tim.androidshowcase.Login.LoginViewModel" />
     </data>
 
-    <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -16,9 +17,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:text="@string/sign_up"
             android:textSize="@dimen/text_size_large"
-            android:gravity="center_horizontal"
             tools:ignore="SpUsage" />
 
         <LinearLayout
@@ -31,23 +32,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/email"/>
+                android:text="@string/email" />
 
             <EditText
                 android:id="@+id/editTextLoginName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@{loginViewModel.loginName}"
                 android:hint="@string/hint_email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:text="@{loginViewModel.loginName}" />
 
             <Button
                 android:id="@+id/buttonSignUpEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/next"
-                android:layout_gravity="end"/>
+                android:layout_gravity="end"
+                android:text="@string/next" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/login_pass"/>
+                android:text="@string/login_pass" />
 
             <EditText
                 android:id="@+id/editTextLoginPass"
@@ -74,8 +75,8 @@
                 android:id="@+id/buttonSignUpPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/next"
-                android:layout_gravity="end"/>
+                android:layout_gravity="end"
+                android:text="@string/next" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/confirm_password"/>
+                android:text="@string/confirm_password" />
 
             <EditText
                 android:id="@+id/editTextLoginPassConfirm"
@@ -102,34 +103,42 @@
                 android:id="@+id/buttonSignUpPasswordConfirm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/next"
-                android:layout_gravity="end"/>
+                android:layout_gravity="end"
+                android:text="@string/next" />
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/layoutSignUpFinish"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal">
 
             <TextView
                 android:id="@+id/textViewPasswordCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/passwords_match"/>
+                android:layout_centerHorizontal="true"
+                android:text="@string/passwords_match" />
 
             <Button
                 android:id="@+id/buttonSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_up"
+                android:layout_below="@id/textViewPasswordCheck"
                 android:paddingLeft="@dimen/text_size_large"
                 android:paddingRight="@dimen/text_size_large"
+                android:text="@string/sign_up"
                 android:textSize="@dimen/text_size_medium"
                 tools:ignore="SpUsage" />
-        </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBarSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewPasswordCheck"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
 
     </LinearLayout>
 </layout>
