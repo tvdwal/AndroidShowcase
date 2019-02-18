@@ -65,4 +65,12 @@
         style="@style/DefaultButton"
         android:text="CardIO"/>
 
+    <Button
+        android:id="@+id/btnNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/DefaultButton"
+        android:text="Notifications"/>
+
 </LinearLayout>

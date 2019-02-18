@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         btnSharedPreferences.setOnClickListener { goToActivity(SharedPreferenceActivity::class.java) }
         btnRealm.setOnClickListener{ goToActivity(RealmActivity::class.java) }
         btnCardIo.setOnClickListener{ goToActivity(CardIoActivity::class.java) }
+        btnNotifications.setOnClickListener{ goToActivity(CardIoActivity::class.java) }
     }
 
     private fun goToActivity(destinationActivity: Class<*>) {
